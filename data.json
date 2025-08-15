@@ -1,0 +1,12 @@
+{
+  "personajes": [
+    { "nombre": "Ragnar", "vidaBase": 100, "dañoFisico": 35, "dañoMagico": 0, "imagen": "./media/ragnar.PNG" },
+    { "nombre": "Calradio", "vidaBase": 90, "dañoFisico": 0, "dañoMagico": 30, "imagen": "./media/calradio.PNG" },
+    { "nombre": "Legolas", "vidaBase": 80, "dañoFisico": 30, "dañoMagico": 0, "imagen": "./media/legolas.png" }
+  ],
+  "mounstros": [
+    { "nombre": "Golem de piedra", "resistencia": "fisico", "daño": 20, "vida": 120, "imagen": "./media/golem.png" },
+    { "nombre": "Ogro", "resistencia": "fisico", "daño": 25, "vida": 120, "imagen": "./media/ogro.png" },
+    { "nombre": "Esqueleto", "resistencia": "magico", "daño": 15, "vida": 100, "imagen": "./media/esqueleto.png" }
+  ]
+}

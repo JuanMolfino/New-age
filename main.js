@@ -2,7 +2,6 @@ function $(id) {
     return document.getElementById(id);
 }
 
-
 //constructoras
 function Personaje(nombre, vidaBase, dañoFisico, dañoMagico) {
     this.nombre = nombre
@@ -16,17 +15,29 @@ function Mounstro(n, r, d, v) {
     this.daño = d
     this.vida = v
 }
+let personajes = [];
+let mounstros = [];
 
-//personajes y daños
-const ragnar = new Personaje("Ragnar", 100, 35, 0)
-const calradio = new Personaje("Calradio", 90, 0, 30)
-const legolas = new Personaje("Legolas", 80, 30, 0)
-const golem = new Mounstro("Golem de piedra", "fisico", 20, 120)
-const ogro = new Mounstro("Ogro", "fisico", 25, 120);
-const esqueleto = new Mounstro("Esqueleto", "magico", 15, 100);
-const personajes = [ragnar, calradio, legolas]
-const mounstros = [golem, ogro, esqueleto]
+fetch("./data.json")
+    .then(response => response.json())
+    .then(data => {
+        personajes = data.personajes.map(p => new Personaje(p.nombre, p.vidaBase, p.dañoFisico, p.dañoMagico))
+        mounstros = data.mounstros.map(m => new Mounstro(m.nombre, m.resistencia, m.daño, m.vida))
+        //p es de personaje y m de mounstro para asignar imagenes
+        personajes.forEach((p, i) => p.imagen = data.personajes[i].imagen)
+        mounstros.forEach((m, i) => m.imagen = data.mounstros[i].imagen)
 
+        // Inicializar default
+        personajeActual = personajes[0]
+        mounstroActual = mounstros[0]
+        updateImgPJ()
+        updateImgMounstro()
+    })
+    .catch(error =>( Swal.fire({
+            title: "Error de carga!",
+            text: `no se pudo cargar la data: ${error}`,
+            icon: "error"
+        })));
 //numero aleatorio para daños
 function numeroAleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
@@ -37,8 +48,6 @@ let mounstroActual = mounstros[0]
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
-let imgPersonaje = $("imgPersonaje")
-let imgMounstro = $("imgMounstro")
 async function pelea1() {
     let vidaPersonaje = personajeActual.vidaBase
     let vidaMounstro = mounstroActual.vida
@@ -67,14 +76,12 @@ async function pelea1() {
                 dañoPersonaje *= 0.75
             }
         }
-
-
         vidaMounstro -= dañoPersonaje
         imgPersonaje.classList.add("ataque")
         setTimeout(() => {
             imgPersonaje.classList.remove("ataque")
         }, 500) // efecto de ataque
-        
+
         display.innerHTML += `<p>${personajeActual.nombre} inflige ${dañoPersonaje} de daño al ${mounstroActual.nombre}. </p>`
         if (vidaMounstro > 0) {
             vidaPersonaje -= dañoMounstro
@@ -92,12 +99,14 @@ async function pelea1() {
         await delay(1000) // para dar un efecto de espera entre rondas
     }
     if (vidaPersonaje <= 0 && vidaMounstro <= 0) {
+
         Swal.fire({
             title: "Han empatado?!",
             text: `ambos han caído en batalla`,
             icon: "info"
         })
     } else if (vidaPersonaje <= 0) {
+
         Swal.fire({
             title: "Has Perdido!",
             text: `El ${personajeActual.nombre} ha sido derrotado`,
@@ -154,21 +163,21 @@ function resetName() {
 }
 //update de imagenes
 
-function updateImgPJ(){
-if (personajeActual == personajes[0]) {
-    imgPersonaje.src = "./media/ragnar.PNG"
-} else if (personajeActual == personajes[1]) {
-    imgPersonaje.src = "./media/calradio.PNG"
-} else {
-    imgPersonaje.src = "./media/legolas.png"
-}}
-function updateImgMounstro(){
+function updateImgPJ() {
+    if (personajeActual == personajes[0]) {
+        imgPersonaje.src = "./media/ragnar.PNG"
+    } else if (personajeActual == personajes[1]) {
+        imgPersonaje.src = "./media/calradio.PNG"
+    } else {
+        imgPersonaje.src = "./media/legolas.png"
+    }
+}
+function updateImgMounstro() {
     if (mounstroActual == mounstros[0]) {
         imgMounstro.src = "./media/golem.PNG"
     } else if (mounstroActual == mounstros[1]) {
         imgMounstro.src = "./media/orgo.png"
-    }   else {
+    } else {
         imgMounstro.src = "./media/esqueleto.png"
     }
 }
-//tienda

@@ -139,4 +139,18 @@ body .resultado {
   font-size: 3rem;
 }
 
+.sesion-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.sesion-box .sesion {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */
