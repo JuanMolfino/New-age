@@ -1,23 +1,27 @@
-
-body{
-     margin: 0;
+body {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
-    background-image: url('../media/OsiGAP.jpg');
-    h1{
+    background-image: url(../media/c935ca70-daf4-44ee-959f-521467531979.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h1 {
         font-size: 6.5rem;
         color: white;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         display: flex;
         justify-content: center;
     }
-    h2{
+
+    h2 {
         display: flex;
         justify-content: center;
         font-size: 3rem;
     }
-    .botonBox{
+
+    .botonBox {
         width: 6.25rem;
         height: 3.125rem;
         display: flex;
@@ -26,32 +30,139 @@ body{
         align-items: center;
         margin-top: 5.25rem;
     }
-    .box-selects{
+
+    .box-selects {
         display: flex;
         justify-content: space-evenly;
-    .display{
-        width: 18.75rem;
-        height: fit-content;
-        border: 1px solid white;
-        background-color: black;
+
+        .display {
+            width: 18.75rem;
+            height: fit-content;
+            border: 1px solid white;
+            background-color: black;
+        }
+
+        .selectPj-box {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .selectMonster-box {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+        }
     }
 
-        .selectPj-box{
-        width  :5rem;
-        height: 5rem;
+    .arena {
+        width: 48rem;
+        height: 25rem;
         display: flex;
-        margin: 0 auto;
         justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        position: relative;
+
+
+        .personaje-Img {
+            .ataque {
+                animation: golpear 0.2s linear;
+            }
+
+            @keyframes golpear {
+                0% {
+                    transform: translateX(0);
+                }
+
+                50% {
+                    transform: translateX(20px);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            img {
+                width: 10rem;
+                height: 20rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
         }
-        .selectMonster-box{
-            width  :5rem;
-        height: 5rem;
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
+
+        .mounstro-Img {
+            .ataque {
+                animation: golpear 0.2s linear;
+            }
+
+            @keyframes golpear {
+                0% {
+                    transform: translateX(0);
+                }
+
+                50% {
+                    transform: translateX(20px);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            img {
+                width: 20rem;
+                height: 20rem;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        .barra-vida {
+            width: 20rem;
+            height: 1.25rem;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            margin-top: 1.25rem;
+
+            .vida {
+                width: 100%;
+                height: 100%;
+                background-color: red;
+                border-radius: 10px;
+            }
+        }
+
+        .barra-vida-mounstro {
+            width: 20rem;
+            height: 1.25rem;
+            background-color:black;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 10px;
+            margin-top: 1.25rem;
+
+            .vida-mounstro {
+                width: 100%;
+                height: 100%;
+                background-color: red;
+                border-radius: 10px;
+            }
         }
     }
-   .resultado{
-    font-size: 3rem;
-   }
+
+    .resultado {
+        font-size: 3rem;
+    }
 }

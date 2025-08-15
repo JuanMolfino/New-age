@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New age</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="main.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -16,6 +17,8 @@
     <button id="botonReset"> Cerrar sesion </button>
     <h1>New Age Dungeon </h1>
     <h2 id="bienvenido">¡Bienvenido a la aventura!</h2>
+    
+
     <div class="box-selects">
       <div class="selectPj-box">
 
@@ -25,26 +28,41 @@
           <option value="1">Calradio</option>
           <option value="2">Legolas</option>
         </select>
-      </div>
-      <div class="display" >
-          <p></p>
-        </div>
-
-        <div class="selectMonster-box">
-          <select class="selectMonster" name="monster" id="selectMonster">
-            <option value="">Seleciona al mounstro</option>
-            <option value="0">Golem de piedra</option>
-            <option value="1">Ogro</option>
-            <option value="2">Esqueleto</option>
-          </select>
-        </div>
- </div>
-    <div class="resultado">
       
+
+      <div class="selectMonster-box">
+        <select class="selectMonster" name="monster" id="selectMonster">
+          <option value="">Seleciona al mounstro</option>
+          <option value="0">Golem de piedra</option>
+          <option value="1">Ogro</option>
+          <option value="2">Esqueleto</option>
+        </select>
+      </div>
     </div>
-        <div class="botonBox">
-          <button class="botonInicio" id="start">!Comienza la aventura!</button>
+    <div class="resultado">
+
+    </div>
+    <div class="arena">
+      <div class="personaje-Img">
+        <img id="imgPersonaje" src="./media/ragnar.PNG" alt="Ragnar">
+        <div class="barra-vida">
+          <div class="vida"></div>
         </div>
+      </div>
+      <div class="mounstro-Img">
+        <img id="imgMounstro" src="./media/golem.png" alt="mounstro">
+        <div class="barra-vida-mounstro">
+          <div class="vida-mounstro"></div>
+        </div>
+      </div>
+</div>
+      <div class="display">
+        <p></p>
+      </div>
+    </div>
+    <div class="botonBox">
+      <button class="botonInicio" id="start">!Comienza la aventura!</button>
+    </div>
 
 
 

@@ -3,7 +3,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: white;
-  background-image: url("../media/OsiGAP.jpg");
+  background-image: url(../media/c935ca70-daf4-44ee-959f-521467531979.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 body h1 {
   font-size: 6.5rem;
@@ -49,6 +51,89 @@ body .box-selects .selectMonster-box {
   display: flex;
   margin: 0 auto;
   justify-content: center;
+}
+body .arena {
+  width: 48rem;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+body .arena .personaje-Img .ataque {
+  animation: golpear 0.2s linear;
+}
+@keyframes golpear {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+body .arena .personaje-Img img {
+  width: 10rem;
+  height: 20rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+body .arena .mounstro-Img .ataque {
+  animation: golpear 0.2s linear;
+}
+@keyframes golpear {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+body .arena .mounstro-Img img {
+  width: 20rem;
+  height: 20rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+body .arena .barra-vida {
+  width: 20rem;
+  height: 1.25rem;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  margin-top: 1.25rem;
+}
+body .arena .barra-vida .vida {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  border-radius: 10px;
+}
+body .arena .barra-vida-mounstro {
+  width: 20rem;
+  height: 1.25rem;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+  margin-top: 1.25rem;
+}
+body .arena .barra-vida-mounstro .vida-mounstro {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  border-radius: 10px;
 }
 body .resultado {
   font-size: 3rem;
