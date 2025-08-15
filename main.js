@@ -165,16 +165,16 @@ function resetName() {
 
 function updateImgPJ() {
     if (personajeActual == personajes[0]) {
-        imgPersonaje.src = "./media/ragnar.PNG"
+        imgPersonaje.src = "./media/ragnar.png"
     } else if (personajeActual == personajes[1]) {
-        imgPersonaje.src = "./media/calradio.PNG"
+        imgPersonaje.src = "./media/calradio.png"
     } else {
         imgPersonaje.src = "./media/legolas.png"
     }
 }
 function updateImgMounstro() {
     if (mounstroActual == mounstros[0]) {
-        imgMounstro.src = "./media/golem.PNG"
+        imgMounstro.src = "./media/golem.png"
     } else if (mounstroActual == mounstros[1]) {
         imgMounstro.src = "./media/orgo.png"
     } else {
