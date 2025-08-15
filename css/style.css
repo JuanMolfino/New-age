@@ -32,25 +32,33 @@ body .box-selects {
   display: flex;
   justify-content: space-evenly;
 }
-body .box-selects .display {
-  width: 18.75rem;
-  height: fit-content;
-  border: 1px solid white;
-  background-color: black;
-}
-body .box-selects .selectPj-box {
+body .box-selects .selectPj-box, body .box-selects .selectMonster-box {
   width: 5rem;
   height: 5rem;
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   justify-content: center;
 }
-body .box-selects .selectMonster-box {
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
+body .box-selects .selectPj-box .h3-select, body .box-selects .selectMonster-box .h3-select {
+  text-align: center;
+  margin-top: 14rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body .box-selects .selectPj-box .selectPj, body .box-selects .selectMonster-box .selectPj {
+  width: 12.5rem;
+  height: 6rem;
+}
+body .box-selects .selectMonster-box .h3-select {
+  text-align: center;
+  margin-top: 14rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body .box-selects .selectMonster-box .selectMonster {
+  width: 12.5rem;
+  height: 6rem;
 }
 body .arena {
   width: 48rem;
@@ -135,8 +143,40 @@ body .arena .barra-vida-mounstro .vida-mounstro {
   background-color: red;
   border-radius: 10px;
 }
+body .display-box {
+  margin-top: 2rem;
+  width: 20rem;
+  height: fit-content;
+  border: 1px solid white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+body .display-box .display-h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+body .display-box .display {
+  width: 18.75rem;
+  height: fit-content;
+  border: 1px solid white;
+  background-color: black;
+  display: grid;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
 body .resultado {
   font-size: 3rem;
+  margin: 0 auto;
 }
 
 .sesion-box {

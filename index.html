@@ -11,55 +11,58 @@
 </head>
 
 <body>
-  <main><div class="sesion-box">
-    <input type="text" id="nameInput" placeholder="Ingresa tu nombre" class="sesion">
-    <button id="botonSave">Guardar nombre</button>
-    <button id="botonReset"> Cerrar sesion </button>
+  <main>
+    <div class="sesion-box">
+      <input type="text" id="nameInput" placeholder="Ingresa tu nombre" class="sesion">
+      <button id="botonSave">Guardar nombre</button>
+      <button id="botonReset"> Cerrar sesion </button>
     </div>
     <h1>New Age Dungeon </h1>
     <h2 id="bienvenido">¡Bienvenido a la aventura!</h2>
-    
+    <div class="resultado">
+
+      </div>
 
     <div class="box-selects">
       <div class="selectPj-box">
-
+        <h3 class="h3-select">Seleciona al heroe</h3>
         <select class="selectPj" name="pj" id="selectPersonaje">
-          <option value="">seleciona a tu heroe</option>
           <option value="0">Ragnar</option>
           <option value="1">Calradio</option>
           <option value="2">Legolas</option>
         </select>
+
+
+        <div class="selectMonster-box">
+          <h3 class="h3-select">Seleciona al mounstro</h3>
+          <select class="selectMonster" name="monster" id="selectMonster" >
+            <option value="0">Golem de piedra</option>
+            <option value="1">Ogro</option>
+            <option value="2">Esqueleto</option>
+          </select>
+        </div>
+      </div>
       
-
-      <div class="selectMonster-box">
-        <select class="selectMonster" name="monster" id="selectMonster">
-          <option value="">Seleciona al mounstro</option>
-          <option value="0">Golem de piedra</option>
-          <option value="1">Ogro</option>
-          <option value="2">Esqueleto</option>
-        </select>
-      </div>
-    </div>
-    <div class="resultado">
-
-    </div>
-    <div class="arena">
-      <div class="personaje-Img">
-        <img id="imgPersonaje" src="./media/ragnar.PNG" alt="Ragnar">
-        <div class="barra-vida">
-          <div class="vida"></div>
+      <div class="arena">
+        <div class="personaje-Img">
+          <img id="imgPersonaje" src="./media/ragnar.PNG" alt="imagen del heroe">
+          <div class="barra-vida">
+            <div class="vida"></div>
+          </div>
+        </div>
+        <div class="mounstro-Img">
+          <img id="imgMounstro" src="./media/golem.png" alt="imagen del mounstro">
+          <div class="barra-vida-mounstro">
+            <div class="vida-mounstro"></div>
+          </div>
         </div>
       </div>
-      <div class="mounstro-Img">
-        <img id="imgMounstro" src="./media/golem.png" alt="mounstro">
-        <div class="barra-vida-mounstro">
-          <div class="vida-mounstro"></div>
-        </div>
-      </div>
-</div>
-      <div class="display">
-        <p></p>
-      </div>
+    </div>
+    <div class="display-box">
+      <h3 class="display-h3">Display</h3>
+    <div class="display">
+      <p></p>
+    </div>
     </div>
     <div class="botonBox">
       <button class="botonInicio" id="start">!Comienza la aventura!</button>
