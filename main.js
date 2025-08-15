@@ -165,11 +165,11 @@ function resetName() {
 
 function updateImgPJ() {
     if (personajeActual == personajes[0]) {
-        imgPersonaje.src = "./media/ragnar.png"
+        imgPersonaje.src = "./media/ragnar.PNG"
     } else if (personajeActual == personajes[1]) {
-        imgPersonaje.src = "./media/calradio.png"
+        imgPersonaje.src = "./media/calradio.PNG"
     } else {
-        imgPersonaje.src = "./media/legolas.png"
+        imgPersonaje.src = "./media/legolas.PNG"
     }
 }
 function updateImgMounstro() {
